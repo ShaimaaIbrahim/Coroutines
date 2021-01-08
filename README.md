@@ -22,7 +22,7 @@
 # 3-thread :- such as Dispatchers
 # 4-body:-
 
-# **withContext() function make context switching do only one task on separate thread 
+# **withContext() suspend function make context switching do only one task on separate thread 
 # **example:-
 # GlobalScope.launch(Dispatchers.IO){
   //do task on IO
@@ -65,6 +65,7 @@
     }
 
 }
+# the condition of make all functions operate at same thread is :- put all suspend functions inside coroutines
 
 
 
