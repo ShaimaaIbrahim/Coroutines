@@ -7,7 +7,7 @@
 # suspend functions handle contiuation concept easily
 # continuation :- function contiune its work where it stopped
 
-# thera are five types of threads :
+# **thera are five types of threads :
 # 1-IO :- used for database, apis calls
 # 2-MAIN :- used for ui updates such as views and livedata
 # 3-unConfined :- unknown
@@ -16,10 +16,20 @@
  // do any task
 }
 
-# coroutines should achieve these five concepts
+# **coroutines should achieve these five concepts
 # 1- scope
 # 2 -starting need result or not such as launch or await 
 # 3-thread :- such as Dispatchers
 # 4-body:-
+
+# **withContext() function make context switching do only one task on separate thread 
+# **example:-
+# GlobalScope.launch(Dispatchers.IO){
+  //do task on IO
+ withContext(Dispatchers.MAIN){
+   //do task on main
+ }
+}
+
 
 
