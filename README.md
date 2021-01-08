@@ -31,5 +31,42 @@
  }
 }
 
+# runBlocking :- block main thread from working
+# coroutines achieve cocurrency all functions happen at same time.
+# example:- these two functions happens at same time
+# class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+
+        GlobalScope.launch {
+
+         doTaskLabel1("shaimaa")
+         doTaskLabel2("eman")
+        }
+
+    }
+    //suspend function inside it coroutines
+   suspend fun doTaskLabel1(mytext : String){
+       GlobalScope.launch {
+           delay(2000)
+           Log.d("mytext" , mytext);
+       }
+    }
+    
+   //suspend function inside it coroutines   
+    suspend  fun doTaskLabel2(mytext : String){
+        GlobalScope.launch {
+            delay(2000)
+            Log.d("mytext" , mytext);
+        }
+    }
+
+}
+
+
+
 
 
